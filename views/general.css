@@ -1,0 +1,147 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  height: 100%;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* background: linear-gradient(to bottom, rgb(0, 62, 21), rgb(199, 204, 157)) no-repeat; */
+  background-color: rgb(203, 203, 203);
+  margin-top: 50px;
+}
+
+::selection {
+  background-color: rgb(199, 204, 157);
+}
+
+.navbar {
+  background-color: rgb(0, 62, 21);
+}
+
+.nav-link {
+  color: rgb(199, 204, 157);
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+header {
+  padding: 50px;
+  background-color: rgb(0, 62, 21);
+  text-align: center;
+  color: rgb(199, 204, 157);
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.buscar-articulo {
+  background-color: rgb(199, 204, 157);
+  border: 1px solid grey;
+}
+
+.buscar-articulo:focus {
+  background-color: rgb(235, 240, 188);
+  outline: 2px solid rgb(72, 73, 56);
+}
+
+.btn {
+  background-color: rgb(119, 121, 94);
+  color: white;
+}
+
+.btn:hover {
+  background-color: rgb(72, 73, 56);
+  color: white;
+}
+
+.herramientas {
+  margin: 30px;
+}
+
+.container {
+  display: flex;
+  margin: 50px;
+  gap: 20px;
+}
+
+.articulo {
+  flex-grow: 1;
+  padding: 20px;
+  border-radius: 15px;
+  background: #e8e8e8;
+  box-shadow:  14px 14px 28px #bbbbbb,
+              -14px -14px 28px #e0e0e0;
+}
+
+.articulo:hover {
+  animation: mover 0.5s ease-in-out, changeBGColor 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.15s;
+}
+
+.articulo:not(:hover) {
+  animation: reverseMover 0.5s ease-in-out, reverseChangeBGColor 0.5s ease-in-out;
+}
+
+.articulo p {
+  text-align: justify;
+}
+
+input {
+  border: 1px solid grey;
+  border-radius: 10px;
+  background: rgb(199, 204, 157);
+  padding: 10px;
+}
+
+input:focus {
+  background-color: rgb(235, 240, 188);
+  outline: 2px solid rgb(72, 73, 56);
+}
+
+button {
+  padding: 10px;
+  background: rgb(119, 121, 94);
+  border: 1px solid grey;
+  border-radius: 10px;
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(72, 73, 56);
+}
+
+footer {
+  background-color: rgb(0, 62, 21);
+  color: rgb(199, 204, 157);
+  padding: 30px;
+  text-align: center;
+}
+
+@keyframes mover {
+  0% {transform: translateY(0px)}
+  100% {transform: translateY(-10px)}
+}
+
+@keyframes reverseMover {
+  0% {transform: translateY(-10px)}
+  100% {transform: translateY(0px)}
+}
+
+@keyframes changeBGColor {
+  0% {background: #e8e8e8}
+  100% {background: #dcdcdc}
+}
+
+@keyframes reverseChangeBGColor {
+  0% {background: #dcdcdc}
+  100% {background: #e8e8e8}
+}
