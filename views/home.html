@@ -10,27 +10,18 @@
     <link rel="stylesheet" href="general.css">
     
     <title>Olive</title>
+    <link rel="icon" href="logo.svg" type="image/x-icon">
 </head>
 
 <body>
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="home.html"><img src="logo.svg" alt="Logo" width="40px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="mynavbar">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Link</a>
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse" id="mynavbar">    
                 <form class="d-flex">
                     <input class="buscar-articulo form-control me-2" type="text"
                         placeholder="Buscar artículo...">
@@ -38,7 +29,73 @@
                 </form>
             </div>
         </div>
+        <div class="buttonContainer">
+            <button type="button" class="btn navbarbtn loginBtn" data-bs-toggle="modal" data-bs-target="#login">Login</button>
+            <button type="button" class="btn navbarbtn signupBtn" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button>
+        </div>
     </nav>
+
+    <!-- MODAL LOGIN -->
+    <div class="modal" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <label for="email">Email</label>
+                        <div class="input-group">
+                            <input id="email" type="email" class="form-control" placeholder="username@example.com" required>
+                            <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+                        </div>
+                        <br>
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <input id="password" type="password" class="form-control" placeholder="password" required>
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                    </form><br>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL SIGN UP -->
+    <div class="modal" id="signup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign Up</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="First Name" required>
+                        <input type="text" class="form-control" placeholder="Last Name" required>
+                    </div>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Email" required><br>
+                        <input type="text" class="form-control" placeholder="Password" required><br>
+                        <input type="text" class="form-control" placeholder="Confirm password" required>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Create Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header>
         <h1>Olive</h1>
@@ -54,92 +111,706 @@
         <div class="container">
             <div class="articulo">
                 <h2>Artículo 1</h2>
-                <p>
-                    ¿Qué es Lorem Ipsum?
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
-                    1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
-                    usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
-                    textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
-                    de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
-                    popularizado en los 60s con la creación de las hojas "Letraset", las cuales
-                    contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
-                    como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-    
-                    ¿Por qué lo usamos?
-                    Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
-                    contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
-                    Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
-                    de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
-                    parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
-                    páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
-                    de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
-                    encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
-                    los años, algunas veces por accidente, otras veces a propósito (por ejemplo
-                    insertándole humor y cosas por el estilo).
-    
-    
-                    ¿De dónde viene?
-                    Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
-                    texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
-                    que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
-                    antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
-                    Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
-                    del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
-                    textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
-                    1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
-                    Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
-                    teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
-                    Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
-                </p>
-                <hr>
-                <input type="text" placeholder="Añade un comentario...">
-                <button>Comentar</button>
+                <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo1">Abir</button>
             </div>
             <div class="articulo">
                 <h2>Artículo 2</h2>
-                <p>
-                    ¿Qué es Lorem Ipsum?
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
-                    1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
-                    usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
-                    textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
-                    de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
-                    popularizado en los 60s con la creación de las hojas "Letraset", las cuales
-                    contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
-                    como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-    
-                    ¿Por qué lo usamos?
-                    Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
-                    contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
-                    Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
-                    de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
-                    parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
-                    páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
-                    de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
-                    encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
-                    los años, algunas veces por accidente, otras veces a propósito (por ejemplo
-                    insertándole humor y cosas por el estilo).
-    
-    
-                    ¿De dónde viene?
-                    Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
-                    texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
-                    que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
-                    antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
-                    Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
-                    del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
-                    textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
-                    1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
-                    Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
-                    teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
-                    Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
-                </p>
-                <hr>
-                <input type="text" placeholder="Añade un comentario...">
-                <button>Comentar</button>
+                <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo2">Abir</button>
             </div>
+            <div class="articulo">
+                <h2>Artículo 3</h2>
+                <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo3">Abir</button>
+            </div>
+            <div class="articulo">
+                <h2>Artículo 4</h2>
+                <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo4">Abir</button>
+            </div>
+            <div class="articulo">
+                <h2>Artículo 5</h2>
+                <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo5">Abir</button>
+            </div>
+            <div class="articulo">
+                <h2>Artículo 6</h2>
+                <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo6">Abir</button>
+            </div>
+            <div class="articulo">
+                <h2>Artículo 7</h2>
+                <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo7">Abir</button>
+            </div>
+
+            <!-- MODAL ARTICULO 1 -->
+            <div class="modal" id="articulo1">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Artículo 1</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body textArticle">
+                            <p>
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+                            </p>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="text" placeholder="Añade un comentario...">
+                            <button>Comentar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL ARTICULO 2 -->
+            <div class="modal" id="articulo2">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Artículo 2</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body textArticle">
+                            <p>
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+                            </p>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="text" placeholder="Añade un comentario...">
+                            <button>Comentar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL ARTICULO 3 -->
+            <div class="modal" id="articulo3">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Artículo 3</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body textArticle">
+                            <p>
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+                            </p>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="text" placeholder="Añade un comentario...">
+                            <button>Comentar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL ARTICULO 4 -->
+            <div class="modal" id="articulo4">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Artículo 4</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body textArticle">
+                            <p>
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+                            </p>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="text" placeholder="Añade un comentario...">
+                            <button>Comentar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL ARTICULO 5 -->
+            <div class="modal" id="articulo5">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Artículo 5</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body textArticle">
+                            <p>
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+                            </p>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="text" placeholder="Añade un comentario...">
+                            <button>Comentar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL ARTICULO 6 -->
+            <div class="modal" id="articulo6">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Artículo 6</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body textArticle">
+                            <p>
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+                            </p>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="text" placeholder="Añade un comentario...">
+                            <button>Comentar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL ARTICULO 7 -->
+            <div class="modal" id="articulo7">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Artículo 7</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body textArticle">
+                            <p>
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+
+                                ¿Qué es Lorem Ipsum?
+                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año
+                                1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+                                usó una galería de textos y los mezcló de tal manera que logró hacer un libro de
+                                textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto
+                                de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue
+                                popularizado en los 60s con la creación de las hojas "Letraset", las cuales
+                                contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición,
+                                como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                
+                                ¿Por qué lo usamos?
+                                Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el
+                                contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem
+                                Ipsum es que tiene una distribución más o menos normal de las letras, al contrario
+                                de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen
+                                parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de
+                                páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda
+                                de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se
+                                encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de
+                                los años, algunas veces por accidente, otras veces a propósito (por ejemplo
+                                insertándole humor y cosas por el estilo).
+                
+                
+                                ¿De dónde viene?
+                                Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente
+                                texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin,
+                                que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de
+                                antiguedad. Richard McClintock, un profesor de Latin de la Universidad de
+                                Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua
+                                del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos
+                                textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones
+                                1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                                Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de
+                                teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem
+                                Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
+                            </p>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="text" placeholder="Añade un comentario...">
+                            <button>Comentar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIN ARTICULOS -->
         </div>
     </main>
 
