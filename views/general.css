@@ -90,6 +90,18 @@ h2 {
   background: rgb(52, 53, 41);
 }
 
+.logoutBtn {
+  background: rgb(0, 62, 21);
+}
+
+.logoutBtn:hover {
+  background: rgb(1, 99, 34);
+}
+
+.confirm-logout {
+  background: rgb(121, 0, 0);
+}
+
 .form-control:focus {
   border: 2px solid rgb(0, 62, 21);
 }
@@ -145,6 +157,20 @@ h2 {
 .textArticle {
   max-height: 70vh; /* Ajusta la altura máxima para que haya espacio para el header y footer */
   overflow-y: auto; /* Habilita el scroll solo en el cuerpo */
+  flex: 7;
+}
+
+.articleContainer {
+  display: flex;
+}
+
+.comments {
+  max-height: 60vh; /* Ajusta la altura máxima para que haya espacio para el header y footer */
+  overflow-y: auto; /* Habilita el scroll solo en el cuerpo */
+}
+
+.comments-container {
+  flex: 3;
 }
 
 input {
