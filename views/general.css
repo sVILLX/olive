@@ -165,7 +165,7 @@ h2 {
 }
 
 .comments {
-  max-height: 60vh; /* Ajusta la altura máxima para que haya espacio para el header y footer */
+  max-height: 55vh; /* Ajusta la altura máxima para que haya espacio para el header y footer */
   overflow-y: auto; /* Habilita el scroll solo en el cuerpo */
 }
 
