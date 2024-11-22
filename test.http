@@ -1,0 +1,8 @@
+### TEST
+
+@date = {{new Date().toISOString()}}
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{"username" : "liliatorre", "date" : "{{date}}", "content" : "MimiblaBlablamiHolaHola"}
