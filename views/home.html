@@ -4,14 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- IMPORTS PARA EL MARKDOWN -->
+    <link rel="stylesheet" type="text/css" href="./markdown/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./markdown/css/github-markdown-light.css">
+
+    <script type="text/javascript" src="./markdown/js/marked.min.js"></script>
+    <script type="text/javascript" src="./markdown/js/purify.min.js"></script>
+    <script type="text/javascript" src="./markdown/js/ace/ace.js"></script>
+    <script type="text/javascript" src="./markdown/js/ace/mode-markdown.js"></script>
+    <script type="text/javascript" src="./markdown/js/storehouse.js"></script>
+    <script type="text/javascript" src="./markdown/js/main.js"></script>
+
+    <!-- IMPORTS PERSONALES -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/8382154129.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="general.css">
+
+
     
     <title>Olive</title>
     <link rel="icon" href="logo.svg" type="image/x-icon">
 </head>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-77C1GEG9C8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-77C1GEG9C8');
+</script>
 
 <body>
     <!-- NAVBAR -->
@@ -104,8 +129,54 @@
     <main>
         <!-- BARRA DE HERRAMIENTAS -->
         <div class="herramientas">
-            <button>Publicar nuevo artículo</button>
+            <button type="button" class="btnNewArticle" data-bs-toggle="modal" data-bs-target="#nuevoArticulo"><i class="fa-solid fa-plus"></i> Publicar nuevo artículo</button> 
         </div>
+
+        <!-- MODAL PUBLICAR NUEVO ARTÍCULO   -->
+        <div class="modal" id="nuevoArticulo">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <input type="text" style="width: 1000px;">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <!-- MARKDOWN LIVE PREVIEW -->
+                        <header style="margin: 10px; padding: 10px; background: rgb(72, 73, 56);">
+                            <div id="menu-items">
+                                <div id="reset-button"><a href="#">Reset</a></div>
+                                <div id="copy-button"><a href="#">Copiar</a></div>
+                                <!-- <div id="sync-button"><input type="checkbox" id="sync-scroll-checkbox"><label for="sync-scroll-checkbox">Sync scroll</label></div> -->
+                            </div>
+                        </header>
+                    
+                        <div class="markdownContainer">
+                            <div id="container">
+                        
+                                <div id="edit" class="column">
+                                    <div id="editor-wrapper">
+                                        <div id="editor"></div>
+                                    </div>  
+                                </div>
+                                <div id="preview" class="column">
+                                    <div id="preview-wrapper">
+                                        <div id="output" class="content markdown-body"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" data-bs-dismiss="modal">Publicar</button>
+                    </div>
+          
+                </div>
+            </div>
+        </div>
+
         <hr>
         <!-- ARTÍCULOS -->
         <div class="container">
@@ -272,11 +343,10 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <i class="far fa-star" style="font-size:24px"></i>
-                            <input type="text" placeholder="Añade un comentario...">
+                            <textarea type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
                             <button>Comentar</button>
                         </div>
                     </div>
@@ -406,7 +476,7 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <i class="far fa-star" style="font-size:24px"></i>
-                            <input type="text" placeholder="Añade un comentario...">
+                            <textarea type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
                             <button>Comentar</button>
                         </div>
                     </div>
@@ -536,7 +606,7 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <i class="far fa-star" style="font-size:24px"></i>
-                            <input type="text" placeholder="Añade un comentario...">
+                            <textarea type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
                             <button>Comentar</button>
                         </div>
                     </div>
@@ -666,7 +736,7 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <i class="far fa-star" style="font-size:24px"></i>
-                            <input type="text" placeholder="Añade un comentario...">
+                            <textarea type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
                             <button>Comentar</button>
                         </div>
                     </div>
@@ -796,7 +866,7 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <i class="far fa-star" style="font-size:24px"></i>
-                            <input type="text" placeholder="Añade un comentario...">
+                            <textarea type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
                             <button>Comentar</button>
                         </div>
                     </div>
@@ -926,7 +996,7 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <i class="far fa-star" style="font-size:24px"></i>
-                            <input type="text" placeholder="Añade un comentario...">
+                            <textarea type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
                             <button>Comentar</button>
                         </div>
                     </div>
@@ -1056,7 +1126,7 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <i class="far fa-star" style="font-size:24px"></i>
-                            <input type="text" placeholder="Añade un comentario...">
+                            <textarea type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
                             <button>Comentar</button>
                         </div>
                     </div>
