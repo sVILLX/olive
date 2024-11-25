@@ -1,8 +1,10 @@
 ### TEST
 
-@date = {{new Date().toISOString()}}
-
 POST http://localhost:3000/posts
 Content-Type: application/json
 
-{"username" : "liliatorre", "date" : "{{date}}", "content" : "MimiblaBlablamiHolaHola"}
+{"username" : "prueba9", "date" : "2024-11-24T10:30:00Z", "likes" : 9000, "content" : "MimiblaBlablamiHolaHola"}
+
+
+### 
+GET http://localhost:3000/posts?pag=1

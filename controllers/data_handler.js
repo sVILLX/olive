@@ -12,4 +12,18 @@ async function postArticle(articleData) {
     }
 }
 
-module.exports = { postArticle };
+async function getMostLiked() {
+    try {
+        const articles = await Article.find().sort({likes: -1});
+        console.log(articles);
+        return articles;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+exports.postArticle = postArticle;
+exports.getMostLiked = getMostLiked;
+
+// module.exports = { postArticle };
+// module.exports = { getMostLiked };

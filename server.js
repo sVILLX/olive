@@ -1,7 +1,7 @@
 "use strict;"
 
 const express = require('express');
-const router = require('./olive/controllers/router');
+const router = require('./controllers/router');
 const connectDB = require('./db');
 
 const app = express();
