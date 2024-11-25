@@ -110,11 +110,38 @@ h2 {
   margin: 30px;
 }
 
+#articleContent {
+  resize: none;
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+}
+
+/* 
+#markdown {
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+#preview {
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+  background: #f5f5f5;
+  overflow-y: auto;
+} */
+
 .container {
   display: flex;
   flex-wrap: wrap;
   margin: 50px;
   gap: 20px;
+}
+
+.markdownContainer {
+  max-height: 63vh;
+  overflow-y: auto;
 }
 
 .articulo {
@@ -141,6 +168,19 @@ h2 {
   text-align: justify;
 }
 
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 75vh;
+  overflow: hidden;
+}
+
+.btnNewArticle {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .btnArticle {
   padding: 2px 8px 2px 8px;
   background: #dcdcdc;
@@ -155,7 +195,7 @@ h2 {
 }
 
 .textArticle {
-  max-height: 70vh; /* Ajusta la altura máxima para que haya espacio para el header y footer */
+  max-height: 67vh; /* Ajusta la altura máxima para que haya espacio para el header y footer */
   overflow-y: auto; /* Habilita el scroll solo en el cuerpo */
   flex: 7;
 }
@@ -165,12 +205,26 @@ h2 {
 }
 
 .comments {
-  max-height: 55vh; /* Ajusta la altura máxima para que haya espacio para el header y footer */
+  max-height: 50vh; /* Ajusta la altura máxima para que haya espacio para el header y footer */
   overflow-y: auto; /* Habilita el scroll solo en el cuerpo */
 }
 
 .comments-container {
   flex: 3;
+}
+
+.comment {
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+
+.inputComentario {
+  resize: none;
+  border-radius: 10px;
+  background: rgb(199, 204, 157);
+  padding: 5px;
+  width: 230px;
+  height: 80px;
 }
 
 input {
