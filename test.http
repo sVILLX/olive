@@ -1,5 +1,4 @@
-### TEST
-
+### TEST ARTICLES
 POST http://localhost:3000/posts
 Content-Type: application/json
 
@@ -8,3 +7,12 @@ Content-Type: application/json
 
 ### 
 GET http://localhost:3000/posts?pag=1
+
+### TEST COMMENTS
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{"username" : "prueba9", "date" : "2024-11-24T10:30:00Z", "idArticle" : "6743cb73e76526b44c49e274", "content" : "MimiblaBlablamiHolaHola"}
+
+###
+GET http://localhost:3000/comments?articleId=6743cb73e76526b44c49e274
