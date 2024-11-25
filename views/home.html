@@ -25,7 +25,7 @@
 
     
     <title>Olive</title>
-    <link rel="icon" href="logo.svg" type="image/x-icon">
+    <link rel="icon" href="logotipoCompleto.png" type="image/x-icon">
 </head>
 
   <!-- Google tag (gtag.js) -->
@@ -42,7 +42,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html"><img src="logo.svg" alt="Logo" width="40px"></a>
+            <a class="navbar-brand" href="home.html"><img src="logotipoCompleto.png" alt="Logo" width="40px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,7 +50,7 @@
                 <form class="d-flex">
                     <input class="buscar-articulo form-control me-2" type="text"
                         placeholder="Buscar artículo...">
-                    <button class="btn" type="button">Search</button>
+                    <button class="btn" type="button">Buscar</button>
                 </form>
             </div>
         </div>
@@ -62,15 +62,15 @@
 
     <!-- MODAL LOGIN -->
     <div class="modal" id="login">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog modify-dialog">
+            <div class="modal-content modify-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <!-- Modal body -->
-                <div class="modal-body">
+                <div class="modal-body modify-body">
                     <form>
                         <label for="email">Email</label>
                         <div class="input-group">
@@ -83,7 +83,13 @@
                             <input id="password" type="password" class="form-control" placeholder="password" required>
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                    </form><br>
+                    </form>
+                    <br><br><br><br>
+                    <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; flex-direction: column; text-align: center;">
+                        <h1>Bienvenido de vuelta!</h1>
+                        <p>No compartas tu contraseña con nadie</p>
+                        <img src="logotipoCompleto.png" alt="Logotipo Olive" width="150">
+                    </div>
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
@@ -95,15 +101,15 @@
 
     <!-- MODAL SIGN UP -->
     <div class="modal" id="signup">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog modify-dialog">
+            <div class="modal-content modify-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Sign Up</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <!-- Modal body -->
-                <div class="modal-body">
+                <div class="modal-body modify-body">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="First Name" required>
                         <input type="text" class="form-control" placeholder="Last Name" required>
@@ -113,6 +119,12 @@
                         <input type="text" class="form-control" placeholder="Password" required><br>
                         <input type="text" class="form-control" placeholder="Confirm password" required>
                     </form>
+                    <br><br>
+                    <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; flex-direction: column; text-align: center;">
+                        <h1>Regístrate gratis</h1>
+                        <p>Comparte con otros tus ideas y pensamientos!!</p>
+                        <img src="logotipoCompleto.png" alt="Logotipo Olive" width="150px;">
+                    </div>
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
@@ -123,6 +135,7 @@
     </div>
 
     <header>
+        <img src="logotipoCompleto.png" alt="Logotipo Olive" width="100">
         <h1>Olive</h1>
     </header>
 
@@ -134,15 +147,15 @@
 
         <!-- MODAL PUBLICAR NUEVO ARTÍCULO   -->
         <div class="modal" id="nuevoArticulo">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
+            <div class="modal-dialog modify-dialog modal-xl">
+                <div class="modal-content modify-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
                         <input type="text" style="width: 1000px;">
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <!-- Modal body -->
-                    <div class="modal-body">
+                    <div class="modal-body modify-body">
                         <!-- MARKDOWN LIVE PREVIEW -->
                         <header style="margin: 10px; padding: 10px; background: rgb(72, 73, 56);">
                             <div id="menu-items">
@@ -225,15 +238,15 @@
 
             <!-- MODAL ARTICULO 1 -->
             <div class="modal" id="articulo1">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
+                <div class="modal-dialog modify-dialog modal-xl">
+                    <div class="modal-content modify-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Artículo 1</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <!-- Modal body -->
-                        <div class="modal-body articleContainer">
+                        <div class="modal-body modify-body articleContainer">
                             <div class="textArticle">
                                 <p>
                                     ¿Qué es Lorem Ipsum?
@@ -355,15 +368,15 @@
 
             <!-- MODAL ARTICULO 2 -->
             <div class="modal" id="articulo2">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
+                <div class="modal-dialog modify-dialog modal-xl">
+                    <div class="modal-content modify-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Artículo 2</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <!-- Modal body -->
-                        <div class="modal-body articleContainer">
+                        <div class="modal-body modify-body articleContainer">
                             <div class="textArticle">
                                 <p>
                                     ¿Qué es Lorem Ipsum?
@@ -485,15 +498,15 @@
 
             <!-- MODAL ARTICULO 3 -->
             <div class="modal" id="articulo3">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
+                <div class="modal-dialog modify-dialog modal-xl">
+                    <div class="modal-content modify-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Artículo 3</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <!-- Modal body -->
-                        <div class="modal-body articleContainer">
+                        <div class="modal-body modify-body articleContainer">
                             <div class="textArticle">
                                 <p>
                                     ¿Qué es Lorem Ipsum?
@@ -615,15 +628,15 @@
 
             <!-- MODAL ARTICULO 4 -->
             <div class="modal" id="articulo4">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
+                <div class="modal-dialog modify-dialog modal-xl">
+                    <div class="modal-content modify-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Artículo 4</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <!-- Modal body -->
-                        <div class="modal-body articleContainer">
+                        <div class="modal-body modify-body articleContainer">
                             <div class="textArticle">
                                 <p>
                                     ¿Qué es Lorem Ipsum?
@@ -745,15 +758,15 @@
 
             <!-- MODAL ARTICULO 5 -->
             <div class="modal" id="articulo5">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
+                <div class="modal-dialog modify-dialog modal-xl">
+                    <div class="modal-content modify-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Artículo 5</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <!-- Modal body -->
-                        <div class="modal-body articleContainer">
+                        <div class="modal-body modify-body articleContainer">
                             <div class="textArticle">
                                 <p>
                                     ¿Qué es Lorem Ipsum?
@@ -875,15 +888,15 @@
 
             <!-- MODAL ARTICULO 6 -->
             <div class="modal" id="articulo6">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
+                <div class="modal-dialog modify-dialog modal-xl">
+                    <div class="modal-content modify-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Artículo 6</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <!-- Modal body -->
-                        <div class="modal-body articleContainer">
+                        <div class="modal-body modify-body articleContainer">
                             <div class="textArticle">
                                 <p>
                                     ¿Qué es Lorem Ipsum?
@@ -1005,15 +1018,15 @@
 
             <!-- MODAL ARTICULO 7 -->
             <div class="modal" id="articulo7">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
+                <div class="modal-dialog modify-dialog modal-xl">
+                    <div class="modal-content modify-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Artículo 7</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <!-- Modal body -->
-                        <div class="modal-body articleContainer">
+                        <div class="modal-body modify-body articleContainer">
                             <div class="textArticle">
                                 <p>
                                     ¿Qué es Lorem Ipsum?
