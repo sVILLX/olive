@@ -151,17 +151,17 @@
                 <div class="modal-content modify-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <input type="text" style="width: 1000px;">
+                        <input id="articleTitle" type="text" style="width: 1000px;">
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body modify-body">
-                        <!-- MARKDOWN LIVE PREVIEW -->
+                        <!-- MARKDOWN LIVE PREVIEW
                         <header style="margin: 10px; padding: 10px; background: rgb(72, 73, 56);">
                             <div id="menu-items">
                                 <div id="reset-button"><a href="#">Reset</a></div>
                                 <div id="copy-button"><a href="#">Copiar</a></div>
-                                <!-- <div id="sync-button"><input type="checkbox" id="sync-scroll-checkbox"><label for="sync-scroll-checkbox">Sync scroll</label></div> -->
+                                <div id="sync-button"><input type="checkbox" id="sync-scroll-checkbox"><label for="sync-scroll-checkbox">Sync scroll</label></div>
                             </div>
                         </header>
                     
@@ -179,11 +179,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+                        <textarea id="articleContent"></textarea>
                     </div>
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" data-bs-dismiss="modal">Publicar</button>
+                        <button id="publicarButton" type="button" data-bs-dismiss="modal">Publicar</button>
                     </div>
           
                 </div>
@@ -1161,5 +1162,6 @@
     </footer>
 </body>
 
-<script src="javascript/home.js"></script>
+<script src="./javascript/home.js"></script>
+<script src="./javascript/funcionamiento_botones.js"></script>
 </html>
