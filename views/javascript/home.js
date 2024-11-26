@@ -2,7 +2,7 @@ const pagination = document.getElementById('pagination');
 const articleContainer = document.getElementById('articleContainer');
 const loading = document.getElementById('loading');
 
-// Función para obtener comentarios de un artículo
+// obtener comentarios de un artículo
 async function obtenerComentarios(articleId) {
     const urlComments = `http://localhost:3000/comments?articleId=${articleId}`;
     const xhrComments = new XMLHttpRequest();
@@ -36,7 +36,7 @@ async function obtenerComentarios(articleId) {
     });
 }
 
-// Función para obtener datos de un usuario
+// obtener datos de un usuario
 async function obtenerUsuario(userId) {
     const urlUser = `http://localhost:3000/users/${userId}`;
     const xhrUser = new XMLHttpRequest();
@@ -56,7 +56,7 @@ async function obtenerUsuario(userId) {
     });
 }
 
-// Función para renderizar los artículos y comentarios dinámicamente
+// renderizar los artículos y comentarios dinámicamente
 async function renderArticles() {
     const pag1 = 'http://localhost:3000/posts?pag=1';
     const xhr = new XMLHttpRequest();
@@ -124,7 +124,7 @@ async function renderArticles() {
         }
         articleContainer.innerHTML = html;
 
-        // Renderización de la paginación
+        // paginación
         pagination.innerHTML = "";
         for (let i = 0; i < numPags; i++) {
             pagination.innerHTML += `<li class="page-item"><a id="pagination${i + 1}" class="page-link">${i + 1}</a></li>`;
@@ -132,5 +132,5 @@ async function renderArticles() {
     };
 }
 
-// Llama a la función para inicializar la página
+// inicializar la página
 renderArticles();
