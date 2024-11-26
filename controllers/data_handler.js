@@ -35,7 +35,7 @@ async function postComment(commentData) {
 
 async function getComments(articleId) {
     try {
-        const comments = await Comment.find({idArticle: {$eq: articleId}});
+        const comments = await Comment.find({articleId: {$eq: articleId}});
         return comments;
     } catch (error) {
         console.log(error);
@@ -62,12 +62,22 @@ async function getUsers() {
     }
 }
 
+async function getUserById(id) {
+    try {
+        const user = await User.find({_id: {$eq: id}});
+        console.log(user);
+        return user;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 exports.postArticle = postArticle;
 exports.getMostLiked = getMostLiked;
 exports.postComment = postComment;
 exports.getComments = getComments;
 exports.createUser = createUser;
 exports.getUsers = getUsers;
-
+exports.getUserById = getUserById;
 // module.exports = { postArticle };
 // module.exports = { getMostLiked };

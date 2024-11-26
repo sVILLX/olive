@@ -30,17 +30,11 @@ router.route('/')
     });
 
 router.route('/:id')
-    .get((req, res) => {
-        let uuid = req.params.id;
-        let product = dataHandler.getProductById(uuid);
+    .get(async (req, res) => {
+        let id = req.params.id;
+        let user = await dataHandler.getUserById(id);
 
-        if (product != undefined) {
-            res.status(200).json(product);
-        } else {
-            res.status(404)
-                .type('text/plain')
-                .send(`No product with ID ${uuid} found`);
-        }
+        res.send(user);
     });
 
 module.exports = router;

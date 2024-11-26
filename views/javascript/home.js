@@ -13,7 +13,6 @@ xhr.onload = function () {
     let numPags = Math.ceil(JSON.parse(xhr.responseText)[1]);
     let html = "";
     let htmlComments = "";
-    let comments;
 
     if (xhr.status == 404) {
         console.log("Producto no encontrado.");
@@ -26,34 +25,46 @@ xhr.onload = function () {
         for(let i=0; i<articles.length; i++) {
             // Obteniendo los comentarios del artículo
             let xhrComments = new XMLHttpRequest();
-            let urlComments = 'http://localhost:3000/comments?articleId=' + articles[i].id;
+            let urlComments = 'http://localhost:3000/comments?articleId=' + articles[i]._id;
             xhrComments.open('GET', urlComments);
-            comments = JSON.parse(xhrComments.responseText);
-            for(let i=0; i<comments.length; i++) {
-                htmlComments += `
-                    <div class="modal-body">
-                        <div class="comment">
-                            <span class="comments"><b>username:</b></span>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem veniam error impedit cupiditate esse delectus magnam accusamus dicta. Recusandae ipsum quam cum laudantium delectus similique, deserunt quasi iste architecto eaque!</p>
-                        </div>
-                    </div>
-                `
+            xhrComments.send();
+            xhrComments.onload = () =>{
+                let comments = JSON.parse(xhrComments.responseText);
+                for(let i=0; i<comments.length; i++) {
+                    // Obteniendo el username de cada comentario
+                    let xhrUser = new XMLHttpRequest();
+                    let urlUser = 'http://localhost:3000/users/' + comments[i].userId;
+                    xhrUser.open('GET', urlUser);
+                    xhrUser.send();
+                    xhrUser.onload = () => {
+                        let user = JSON.parse(xhrUser.responseText);
+                        htmlComments += `
+                            <div class="modal-body">
+                                <div class="comment">
+                                    <span class="comments"><b>${user[0].username}:</b></span>
+                                    <p>${comments[i].content}</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
             }
+            console.log(htmlComments);
 
             html += `
                 <div class="articulo">
                         <h2>${articles[i].title}</h2>
-                        <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo${articles[i].id}">Abir</button>
+                        <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo${i + 1} id="btnAbrir${i + 1}">Abir</button>
                         <hr>
                         <p><i class="fas fa-star"></i> ${articles[i].likes}</p>
                     </div>
                     
-                    <div class="modal" id="articulo1">
+                    <div class="modal" id="articulo${i + 1}">
                     <div class="modal-dialog modify-dialog modal-xl">
                         <div class="modal-content modify-content">
                             <!-- Modal Header -->
                             <div class="modal-header">
-                                <h4 class="modal-title">Artículo 1</h4>
+                                <h4 class="modal-title">${articles[i].title}</h4>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
                             <!-- Modal body -->
@@ -67,31 +78,8 @@ xhr.onload = function () {
                                     <div class="modal-header">
                                         <h4 class="modal-title">Comentarios</h4>
                                     </div>
-                                    <div class="comments">
-                                        <div class="modal-body">
-                                            <div class="comment">
-                                                <span class="comments"><b>username:</b></span>
-                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem veniam error impedit cupiditate esse delectus magnam accusamus dicta. Recusandae ipsum quam cum laudantium delectus similique, deserunt quasi iste architecto eaque!</p>
-                                            </div>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="comment">
-                                                <span class="comments"><b>username:</b></span>
-                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem veniam error impedit cupiditate esse delectus magnam accusamus dicta. Recusandae ipsum quam cum laudantium delectus similique, deserunt quasi iste architecto eaque!</p>
-                                            </div>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="comment">
-                                                <span class="comments"><b>username:</b></span>
-                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem veniam error impedit cupiditate esse delectus magnam accusamus dicta. Recusandae ipsum quam cum laudantium delectus similique, deserunt quasi iste architecto eaque!</p>
-                                            </div>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="comment">
-                                                <span class="comments"><b>username:</b></span>
-                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem veniam error impedit cupiditate esse delectus magnam accusamus dicta. Recusandae ipsum quam cum laudantium delectus similique, deserunt quasi iste architecto eaque!</p>
-                                            </div>
-                                        </div>
+                                    <div class="comments" id="commentsContainer${i + 1}">
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -105,11 +93,10 @@ xhr.onload = function () {
                     </div>
                 </div>
             `;
-            articleContainer.innerHTML = html;
         }
+        articleContainer.innerHTML = html;
 
         for(let i=0; i<numPags; i++) {
-            console.log("Entre");
             pagination.innerHTML += `<li class="page-item"><a id="pagination${i + 1}" class="page-link">${i + 1}</a></li>`;
         }
     }

@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const commentsSchema = new mongoose.Schema({
-    username: { type: String, required: true },
+    userId: { type: String, required: true },
     date: { type: Date, required: true },
-    idArticle: { type: String, required: true},
+    articleId: { type: String, required: true},
     content: { type: String, required: true }
 });
 

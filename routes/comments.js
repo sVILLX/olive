@@ -16,7 +16,7 @@ router.route('/')
 
             const result = await dataHandler.postComment(comment); // Guardar en MongoDB
 
-            res.status(201).json({ message: "Article created successfully", id: result._id });
+            res.status(201).json({ message: "Comment created successfully", id: result._id });
         } catch (error) {
             console.error("Error processing the request:", error);
             res.status(500).json({ error: "Internal Server Error" });

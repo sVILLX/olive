@@ -2,7 +2,7 @@
 POST http://localhost:3000/posts
 Content-Type: application/json
 
-{"username" : "prueba9", "date" : "2024-11-24T10:30:00Z", "likes" : 9000, "content" : "MimiblaBlablamiHolaHola"}
+{"userId" : "674530947b8c3536d48433c7", "date" : "2024-11-24T10:30:00Z", "likes" : 1000, "title": "articulo9", "content" : "MimiblaBlablamiHolaHola"}
 
 
 ### 
@@ -12,7 +12,17 @@ GET http://localhost:3000/posts?pag=1
 POST http://localhost:3000/comments
 Content-Type: application/json
 
-{"username" : "prueba9", "date" : "2024-11-24T10:30:00Z", "idArticle" : "6743cb73e76526b44c49e274", "content" : "MimiblaBlablamiHolaHola"}
+{"userId" : "674530947b8c3536d48433c7", "date" : "2024-11-24T10:30:00Z", "articleId" : "674531347b8c3536d48433d1", "content" : "commentario5"}
 
 ###
-GET http://localhost:3000/comments?articleId=6743cb73e76526b44c49e274
+GET http://localhost:3000/comments?articleId=674531347b8c3536d48433d1
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{"username": "user1", "password": "password"}
+
+
+###
+GET http://localhost:3000/users/674530947b8c3536d48433c7
