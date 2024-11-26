@@ -277,6 +277,11 @@ footer {
   text-align: center;
 }
 
+.page-link:hover {
+  background: #dcdcdc;
+  color: rgb(0, 62, 21);
+}
+
 @keyframes mover {
   0% {transform: translateY(0px)}
   100% {transform: translateY(-10px)}
