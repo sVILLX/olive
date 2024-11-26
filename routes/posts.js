@@ -27,25 +27,24 @@ router.route('/')
     .get(async (req, res) => {
         try {
             let subarreglo = [];
-            const articulos = await dataHandler.getMostLiked(); // Obtener todos los artículos
-            const pag = parseInt(req.query.pag) || 1; // Página solicitada, por defecto 1
-            const itemsPorPagina = 8; // Número de artículos por página
+            const articulos = await dataHandler.getMostLiked(); // obtener los artículos
+            const pag = parseInt(req.query.pag) || 1; // por defecto 1
+            const itemsPorPagina = 8;
 
-            // Cálculo del rango
+            // cálculo del rango
             const inicio = (pag - 1) * itemsPorPagina;
-            const fin = Math.min(inicio + itemsPorPagina, articulos.length); // Evitar índices fuera de rango
+            const fin = Math.min(inicio + itemsPorPagina, articulos.length); // evitar índices fuera de rango
 
-            // Llenar el subarreglo con artículos de la página actual
+            // llenar el subarreglo con artículos de la página actual
             subarreglo = articulos.slice(inicio, fin);
 
-            // Cálculo del número total de páginas
+            // número total de páginas
             const totalArticulos = articulos.length;
             const pages_count = Math.ceil(totalArticulos / itemsPorPagina);
 
-            // Respuesta
             const data = [
-                subarreglo, // Artículos de la página actual
-                pages_count // Número total de páginas
+                subarreglo, // artículos de la página actual
+                pages_count // número de páginas
             ];
 
             res.status(200).send(data);
