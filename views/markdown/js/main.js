@@ -142,37 +142,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ----- sync scroll position -----
 
-    let initScrollBarSync = (settings) => {
-        let checkbox = document.querySelector('#sync-scroll-checkbox');
-        checkbox.checked = settings;
-        scrollBarSync = settings;
+    // let initScrollBarSync = (settings) => {
+    //     let checkbox = document.querySelector('#sync-scroll-checkbox');
+    //     checkbox.checked = settings;
+    //     scrollBarSync = settings;
 
-        checkbox.addEventListener('change', (event) => {
-            let checked = event.currentTarget.checked;
-            scrollBarSync = checked;
-            saveScrollBarSettings(checked);
-        });
+    //     checkbox.addEventListener('change', (event) => {
+    //         let checked = event.currentTarget.checked;
+    //         scrollBarSync = checked;
+    //         saveScrollBarSettings(checked);
+    //     });
 
-        document.querySelector('#edit').addEventListener('scroll', (event) => {
-            if (!scrollBarSync) {
-                return;
-            }
-            let editorElement = event.currentTarget;
-            let ratio = editorElement.scrollTop / (editorElement.scrollHeight - editorElement.clientHeight);
+    //     document.querySelector('#edit').addEventListener('scroll', (event) => {
+    //         if (!scrollBarSync) {
+    //             return;
+    //         }
+    //         let editorElement = event.currentTarget;
+    //         let ratio = editorElement.scrollTop / (editorElement.scrollHeight - editorElement.clientHeight);
 
-            let previewElement = document.querySelector('#preview');
-            let targetY = (previewElement.scrollHeight - previewElement.clientHeight) * ratio;
-            previewElement.scrollTo(0, targetY);
-        });
-    };
+    //         let previewElement = document.querySelector('#preview');
+    //         let targetY = (previewElement.scrollHeight - previewElement.clientHeight) * ratio;
+    //         previewElement.scrollTo(0, targetY);
+    //     });
+    // };
 
-    let enableScrollBarSync = () => {
-        scrollBarSync = true;
-    };
+    // let enableScrollBarSync = () => {
+    //     scrollBarSync = true;
+    // };
 
-    let disableScrollBarSync = () => {
-        scrollBarSync = false;
-    };
+    // let disableScrollBarSync = () => {
+    //     scrollBarSync = false;
+    // };
 
     // ----- clipboard utils -----
 
@@ -231,15 +231,15 @@ document.addEventListener("DOMContentLoaded", () => {
         Storehouse.setItem(localStorageNamespace, localStorageKey, content, expiredAt);
     };
 
-    let loadScrollBarSettings = () => {
-        let lastContent = Storehouse.getItem(localStorageNamespace, localStorageScrollBarKey);
-        return lastContent;
-    };
+    // let loadScrollBarSettings = () => {
+    //     let lastContent = Storehouse.getItem(localStorageNamespace, localStorageScrollBarKey);
+    //     return lastContent;
+    // };
 
-    let saveScrollBarSettings = (settings) => {
-        let expiredAt = new Date(2099, 1, 1);
-        Storehouse.setItem(localStorageNamespace, localStorageScrollBarKey, settings, expiredAt);
-    };
+    // let saveScrollBarSettings = (settings) => {
+    //     let expiredAt = new Date(2099, 1, 1);
+    //     Storehouse.setItem(localStorageNamespace, localStorageScrollBarKey, settings, expiredAt);
+    // };
 
 
     // ----- entry point -----
@@ -254,8 +254,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setupResetButton();
     setupCopyButton(editor);
 
-    let scrollBarSettings = loadScrollBarSettings() || false;
-    initScrollBarSync(scrollBarSettings);
+    // let scrollBarSettings = loadScrollBarSettings() || false;
+    // initScrollBarSync(scrollBarSettings);
 
     // Hacer que los cambios surtan efecto al inicializar el modal
     document.querySelector('#nuevoArticulo').addEventListener('show.bs.modal', () => {
