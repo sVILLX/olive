@@ -29,4 +29,18 @@ router.route('/')
         res.send(users);
     });
 
+router.route('/:id')
+    .get((req, res) => {
+        let uuid = req.params.id;
+        let product = dataHandler.getProductById(uuid);
+
+        if (product != undefined) {
+            res.status(200).json(product);
+        } else {
+            res.status(404)
+                .type('text/plain')
+                .send(`No product with ID ${uuid} found`);
+        }
+    });
+
 module.exports = router;
