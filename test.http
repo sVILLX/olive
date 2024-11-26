@@ -8,6 +8,9 @@ Content-Type: application/json
 ### 
 GET http://localhost:3000/posts?pag=1
 
+###
+GET http://localhost:3000/posts?pag=2
+
 ### TEST COMMENTS
 POST http://localhost:3000/comments
 Content-Type: application/json

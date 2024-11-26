@@ -1,6 +1,6 @@
 const pagination = document.getElementById('pagination');
 const articleContainer = document.getElementById('articleContainer');
-const loading = document.getElementById('loading');
+let loading = document.getElementById('loading');
 
 // obtener comentarios de un artículo
 async function obtenerComentarios(articleId) {
@@ -19,7 +19,7 @@ async function obtenerComentarios(articleId) {
                     htmlComments += `
                         <div class="modal-body">
                             <div class="comment">
-                                <span class="comments"><b>${user.username}:</b></span>
+                                <span class="comments"><b>${user[0].username}:</b></span>
                                 <p>${comment.content}</p>
                             </div>
                         </div>
@@ -57,11 +57,11 @@ async function obtenerUsuario(userId) {
 }
 
 // renderizar los artículos y comentarios dinámicamente
-async function renderArticles() {
-    const pag1 = 'http://localhost:3000/posts?pag=1';
+async function renderArticles(page = 1) {
+    const pagUrl = `http://localhost:3000/posts?pag=${page}`;
     const xhr = new XMLHttpRequest();
 
-    xhr.open('GET', pag1);
+    xhr.open('GET', pagUrl);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
 
@@ -125,12 +125,32 @@ async function renderArticles() {
         articleContainer.innerHTML = html;
 
         // paginación
-        pagination.innerHTML = "";
-        for (let i = 0; i < numPags; i++) {
-            pagination.innerHTML += `<li class="page-item"><a id="pagination${i + 1}" class="page-link">${i + 1}</a></li>`;
-        }
+        renderPagination(numPags, page);
     };
 }
 
-// inicializar la página
+// renderizar los botones de paginación
+function renderPagination(totalPages, currentPage) {
+    pagination.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+        pagination.innerHTML += `
+            <li class="page-item ${i === currentPage ? 'active' : ''}">
+                <a class="page-link" data-page="${i}">${i}</a>
+            </li>
+        `;
+    }
+
+    // Asignar eventos de clic dinámicamente a los botones de paginación
+    pagination.addEventListener('click', function (event) {
+        const target = event.target;
+        if (target.tagName === 'A') {
+            const selectedPage = parseInt(target.getAttribute('data-page'));
+            if (!isNaN(selectedPage)) {
+                renderArticles(selectedPage); // Cargar artículos de la página seleccionada
+            }
+        }
+    });
+}
+
+// cargando la primera página de artículos
 renderArticles();
