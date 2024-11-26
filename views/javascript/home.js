@@ -70,7 +70,7 @@ async function renderArticles(page = 1) {
         setTimeout (() => {
             console.log("Carga Completa!");
             loading.style.display = "none";
-        }, 2000);
+        }, 4000);
         const response = JSON.parse(xhr.responseText);
         const articles = response[0];
         const numPags = Math.ceil(response[1]);
