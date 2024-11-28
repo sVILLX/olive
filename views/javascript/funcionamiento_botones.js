@@ -32,7 +32,7 @@ newArticleButton.onclick = () => {
                     title: articleTitle.value,
                     content: articleContent.value
                 };
-            
+                
                 const publicar = JSON.stringify(information);
             
                 console.log("Lo que se va a publicar es:")
