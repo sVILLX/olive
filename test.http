@@ -24,8 +24,8 @@ GET http://localhost:3000/comments?articleId=674531347b8c3536d48433d1
 POST http://localhost:3000/users
 Content-Type: application/json
 
-{"username": "user1", "password": "password"}
+{"email": "sergio.villa@iteso.mx", "firstname": "Sergio", "lastname": "Villa", "username": "user1", "password": "password"}
 
 
 ###
-GET http://localhost:3000/users/674530947b8c3536d48433c7
+GET http://localhost:3000/users/auth?email=sergio.villa@iteso.mx&password=hola123

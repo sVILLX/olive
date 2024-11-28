@@ -72,6 +72,11 @@ async function getUserById(id) {
     }
 }
 
+async function authUser(email, password) {
+    let user = await User.findOne({email, password});
+    return user;
+}
+
 exports.postArticle = postArticle;
 exports.getMostLiked = getMostLiked;
 exports.postComment = postComment;

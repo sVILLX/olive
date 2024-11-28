@@ -66,7 +66,7 @@ h2 {
   width: 85px;
 }
 
-.buttonContainer {
+#buttonContainer {
   display: flex;
   gap: 10px;
   margin-right: 10px;
@@ -106,7 +106,7 @@ h2 {
   border: 2px solid rgb(0, 62, 21);
 }
 
-.herramientas {
+#herramientas {
   margin: 30px;
 }
 

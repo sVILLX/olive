@@ -37,4 +37,13 @@ router.route('/:id')
         res.send(user);
     });
 
+router.route('/auth')
+    .get(async (req, res) => {
+        let email = req.query.email;
+        let password = req.query.password;
+        let user = await dataHandler.authUser(email, password);
+
+        res.send(user);
+    });
+
 module.exports = router;

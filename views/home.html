@@ -55,7 +55,7 @@
                 </form>
             </div>
         </div>
-        <div class="buttonContainer">
+        <div id="buttonContainer">
             <button type="button" class="btn navbarbtn loginBtn" data-bs-toggle="modal" data-bs-target="#login">Login</button>
             <button type="button" class="btn navbarbtn signupBtn" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button>
         </div>
@@ -94,7 +94,7 @@
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Login</button>
+                    <button id="loginButton" type="button" class="btn btn-success" data-bs-dismiss="modal">Login</button>
                 </div>
             </div>
         </div>
@@ -112,12 +112,13 @@
                 <!-- Modal body -->
                 <div class="modal-body modify-body">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="First Name" required>
-                        <input type="text" class="form-control" placeholder="Last Name" required>
+                        <input id="signupFirstName" type="text" class="form-control" placeholder="First Name" required>
+                        <input id="signupLastName" type="text" class="form-control" placeholder="Last Name" required>
                     </div>
                     <form>
-                        <input type="text" class="form-control" placeholder="Email" required><br>
-                        <input type="text" class="form-control" placeholder="Password" required><br>
+                        <input id="signupUsername" type="text" class="form-control" placeholder="Username" required><br>
+                        <input id="signupEmail" type="text" class="form-control" placeholder="Email" required><br>
+                        <input id="signupPassword" type="text" class="form-control" placeholder="Password" required><br>
                         <input type="text" class="form-control" placeholder="Confirm password" required>
                     </form>
                     <br><br>
@@ -129,7 +130,7 @@
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Create Account</button>
+                    <button id="createAccountButton" type="button" class="btn btn-success" data-bs-dismiss="modal">Create Account</button>
                 </div>
             </div>
         </div>
@@ -142,8 +143,8 @@
 
     <main>
         <!-- BARRA DE HERRAMIENTAS -->
-        <div class="herramientas">
-            <button id="newArticleButton" type="button" class="btnNewArticle" data-bs-toggle="modal" data-bs-target="#nuevoArticulo"><i class="fa-solid fa-plus"></i> Publicar nuevo artículo</button> 
+        <div id="herramientas">
+            
         </div>
 
         <!-- MODAL PUBLICAR NUEVO ARTÍCULO   -->
