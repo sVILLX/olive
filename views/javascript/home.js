@@ -84,7 +84,7 @@ async function renderArticles(page = 1) {
                 html += `
                     <div class="articulo">
                         <h2>${articles[i].title}</h2>
-                        <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo${i + 1}">Abrir</button>
+                        <button id="abrirButton${i + 1}" type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo${i + 1}">Abrir</button>
                         <hr>
                         <p><i class="fas fa-star"></i> ${articles[i].likes}</p>
                     </div>
@@ -114,8 +114,8 @@ async function renderArticles(page = 1) {
                                 <!-- Modal footer -->
                                 <div class="modal-footer">
                                     <button id="favoriteButton${i + 1}" style="padding:2px;"><i class="far fa-star" style="font-size:24px;"></i></button>
-                                    <textarea type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
-                                    <button>Comentar</button>
+                                    <textarea id="inputComment${i + 1}" type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
+                                    <button id="comentarButton${i + 1}">Comentar</button>
                                 </div>
                             </div>
                         </div>
