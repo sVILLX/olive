@@ -61,71 +61,85 @@ async function renderArticles(page = 1) {
     const pagUrl = `http://localhost:3000/posts?pag=${page}`;
     const xhr = new XMLHttpRequest();
 
+    // mostrar loading antes de iniciar la solicitud
+    loading.style.display = "block";
+
     xhr.open('GET', pagUrl);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
 
     xhr.onload = async function () {
-        loading.style.display = "block";
-        setTimeout (() => {
-            console.log("Carga Completa!");
-            loading.style.display = "none";
-        }, 4000);
-        const response = JSON.parse(xhr.responseText);
-        const articles = response[0];
-        const numPags = Math.ceil(response[1]);
-        let html = "";
+        try {
+            const response = JSON.parse(xhr.responseText);
+            const articles = response[0];
+            const numPags = Math.ceil(response[1]);
+            let html = "";
 
-        articleContainer.replaceChildren();
+            articleContainer.replaceChildren();
 
-        for (let i = 0; i < articles.length; i++) {
-            const htmlComments = await obtenerComentarios(articles[i]._id);
+            // generar HTML de los artículos
+            for (let i = 0; i < articles.length; i++) {
+                const htmlComments = await obtenerComentarios(articles[i]._id);
 
-            html += `
-                <div class="articulo">
-                    <h2>${articles[i].title}</h2>
-                    <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo${i + 1}">Abrir</button>
-                    <hr>
-                    <p><i class="fas fa-star"></i> ${articles[i].likes}</p>
-                </div>
+                html += `
+                    <div class="articulo">
+                        <h2>${articles[i].title}</h2>
+                        <button type="button" class="btnArticle" data-bs-toggle="modal" data-bs-target="#articulo${i + 1}">Abrir</button>
+                        <hr>
+                        <p><i class="fas fa-star"></i> ${articles[i].likes}</p>
+                    </div>
 
-                <div class="modal" id="articulo${i + 1}">
-                    <div class="modal-dialog modify-dialog modal-xl">
-                        <div class="modal-content modify-content">
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">${articles[i].title}</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <!-- Modal body -->
-                            <div class="modal-body modify-body articleContainer">
-                                <div class="textArticle">
-                                    <p>${articles[i].content}</p>
+                    <div class="modal" id="articulo${i + 1}">
+                        <div class="modal-dialog modify-dialog modal-xl">
+                            <div class="modal-content modify-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">${articles[i].title}</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                 </div>
-                                <div class="modal-body comments-container">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Comentarios</h4>
+                                <!-- Modal body -->
+                                <div class="modal-body modify-body articleContainer">
+                                    <div class="textArticle">
+                                        <p>${articles[i].content}</p>
                                     </div>
-                                    <div class="comments">
-                                        ${htmlComments}
+                                    <div class="modal-body comments-container">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Comentarios</h4>
+                                        </div>
+                                        <div class="comments">
+                                            ${htmlComments}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <button id="favoriteButton${i + 1}" style="padding:2px;"><i class="far fa-star" style="font-size:24px;"></i></button>
-                                <textarea type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
-                                <button>Comentar</button>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button id="favoriteButton${i + 1}" style="padding:2px;"><i class="far fa-star" style="font-size:24px;"></i></button>
+                                    <textarea type="text" class="inputComentario" placeholder="Añade un comentario..."></textarea>
+                                    <button>Comentar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            `;
-        }
-        articleContainer.innerHTML = html;
+                `;
+            }
 
-        // paginación
-        renderPagination(numPags, page);
+            articleContainer.innerHTML = html;
+
+            // renderizar la paginación
+            renderPagination(numPags, page);
+
+        } catch (error) {
+            console.error("Error al cargar los artículos:", error);
+        } finally {
+            // ocultar el loading cuando los datos estén listos
+            loading.style.display = "none";
+        }
+    };
+
+    xhr.onerror = function () {
+        console.error("Error de red al intentar cargar los artículos.");
+        // Ocultar el loading incluso si hay un error
+        loading.style.display = "none";
     };
 }
 
