@@ -28,4 +28,7 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3000/users/auth?email=sergio.villa@iteso.mx&password=hola123
+POST http://localhost:3000/users/auth?email=sergio.villa@iteso.mx&password=hola123
+Content-type: application/json
+
+{"email": "sergio.villa@iteso.mx", "password": "hola123"}

@@ -38,10 +38,13 @@ router.route('/:id')
     });
 
 router.route('/auth')
-    .get(async (req, res) => {
-        let email = req.query.email;
-        let password = req.query.password;
+    .post(async (req, res) => {
+        const { email, password } = req.body;
         let user = await dataHandler.authUser(email, password);
+
+        if (!user) {
+            return res.status(404).send('Usuario no encontrado o credenciales incorrectas');
+        }
 
         res.send(user);
     });

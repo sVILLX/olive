@@ -73,7 +73,7 @@ async function getUserById(id) {
 }
 
 async function authUser(email, password) {
-    let user = await User.findOne({email, password});
+    let user = await User.findOne({email, password}); // buscar por email y password
     return user;
 }
 
@@ -84,5 +84,6 @@ exports.getComments = getComments;
 exports.createUser = createUser;
 exports.getUsers = getUsers;
 exports.getUserById = getUserById;
+exports.authUser = authUser;
 // module.exports = { postArticle };
 // module.exports = { getMostLiked };
