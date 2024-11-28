@@ -10,10 +10,11 @@ const port = 3000;
 connectDB();
 
 app.use(express.json());
-app.use(router);
 
-app.use(express.static('app'));
-app.use('/views', express.static('views'));
+app.use(express.static('olive'));
+app.use(express.static('views'));
+
+app.use(router);
 
 app.listen(port, () => {
   console.log('Running on port ' + port);

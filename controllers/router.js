@@ -12,6 +12,5 @@ router.use('/posts', postsRouter);
 router.use('/comments', commentsRouter);
 
 router.get('/', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/home.html")));
-router.get('/home', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/home.html")));
 
 module.exports = router;
